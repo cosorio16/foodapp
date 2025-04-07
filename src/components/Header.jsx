@@ -20,7 +20,7 @@ function Header({ products, setProducts }) {
   };
 
   return (
-    <header className="flex flex-col w-full shadow-xl text-neutral-700 px-5 xl:px-16 py-2 gap-3 font-Poppins bg-white">
+    <header className="flex flex-col w-full shadow-xl text-neutral-700 px-5 xl:px-16 py-2 gap-3 font-Poppins bg-white border-b-2 border-slate-200">
       <div className="flex items-center justify-between">
         <img
           src="/images/logo.jpeg"
