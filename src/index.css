@@ -2,15 +2,6 @@
 
 @import "tailwindcss";
 
-@theme {
-  --font-Poppins: "Poppins", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  --font-Bungee: "Bungee Spice", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  --font-Tint: "Bungee Tint", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
 * {
   scrollbar-width: none; /* Para Firefox */
   -ms-overflow-style: none; /* Para Internet Explorer y Edge */
@@ -101,4 +92,13 @@ button {
   src: url("./fonts/Bungee_Tint/BungeeTint-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+}
+
+@theme {
+  --font-Poppins: "Poppins", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --font-Bungee: "Bungee Spice", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --font-Tint: "Bungee Tint", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
