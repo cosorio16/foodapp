@@ -3,14 +3,22 @@
 @import "tailwindcss";
 
 @theme {
-  --font-Poppins: "Poppins", sans-serif;
-  --font-Bungee: "Bungee Spice", sans-serif;
-  --font-Tint: "Bungee Tint", sans-serif;
+  --font-Poppins: "Poppins", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --font-Bungee: "Bungee Spice", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --font-Tint: "Bungee Tint", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 * {
   scrollbar-width: none; /* Para Firefox */
   -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 /* Para Webkit (Chrome, Safari, Opera) */
