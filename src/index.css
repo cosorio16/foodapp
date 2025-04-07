@@ -5,6 +5,7 @@
 @theme {
   --font-Poppins: "Poppins", sans-serif;
   --font-Bungee: "Bungee Spice", sans-serif;
+  --font-Tint: "Bungee Tint", sans-serif;
 }
 
 * {
@@ -21,15 +22,45 @@ button {
   cursor: pointer;
 }
 
-/* Poppins Regular */
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
 
-/* Poppins Bold */
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
 @font-face {
   font-family: "Poppins";
   src: url("./fonts/Poppins/Poppins-Bold.ttf") format("truetype");
@@ -37,7 +68,19 @@ button {
   font-style: normal;
 }
 
-/* Bungee Spice */
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Bungee Spice";
   src: url("./fonts/Bungee_Spice/BungeeSpice-Regular.ttf") format("truetype");
@@ -45,7 +88,6 @@ button {
   font-style: normal;
 }
 
-/* Bungee Tint */
 @font-face {
   font-family: "Bungee Tint";
   src: url("./fonts/Bungee_Tint/BungeeTint-Regular.ttf") format("truetype");
