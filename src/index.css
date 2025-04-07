@@ -82,14 +82,17 @@ button {
 
 @font-face {
   font-family: "Bungee Spice";
-  src: url("./fonts/Bungee_Spice/BungeeSpice-Regular.ttf") format("truetype");
+  src: url("./fonts/Bungee_Spice/BungeeSpice-Regular.ttf") format("truetype"),
+    url("./fonts/Bungee_Spice/BungeeSpice-Regular.ttf") format("woff2");
+
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Bungee Tint";
-  src: url("./fonts/Bungee_Tint/BungeeTint-Regular.ttf") format("truetype");
+  src: url("./fonts/Bungee_Tint/BungeeTint-Regular.ttf") format("truetype"),
+    url("./fonts/Bungee_Spice/BungeeSpice-Regular.ttf") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
