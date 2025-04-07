@@ -1,13 +1,28 @@
+import { useState } from "react";
 import ArrowLineIcon from "../icons/ArrowLineIcon";
-import HeartIcon from "../icons/HeartIcon";
 import VerifiedIcon from "../icons/VerifiedIcon";
+import HeartIcon from "../icons/HeartIcon";
+import HeartFill from "../icons/HeartFill";
 import useStore from "../store/store";
 
 function Card({ image, price, description, name, notes }) {
   const { setModal } = useStore();
+  const [isFav, setIsFav] = useState(false);
+
+  const handleCurrency = (p) => {
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0,
+    }).format(p);
+  };
+
+  const handleIsFav = () => {
+    setIsFav((isFav) => !isFav);
+  };
 
   return (
-    <div className="border border-slate-100 rounded  gap-2 items-center shadow-sm w-full h-full max-w-96 flex flex-col pb-5 bg-white">
+    <div className="border border-slate-100 rounded  gap-2 items-center shadow-sm w-full h-full md:max-w-96 flex flex-col pb-5 bg-white">
       <div className="overflow-hidden w-full relative">
         <img
           src="/images/1.jpeg"
@@ -19,8 +34,19 @@ function Card({ image, price, description, name, notes }) {
         </button>
       </div>
       <div className="px-4 flex flex-col gap-2 grow py-5 border-b border-neutral-300 relative">
-        <button className="absolute top-3 right-3 text-neutral-600 md:hidden">
-          <HeartIcon sizes={30} />
+        <button
+          onClick={() => handleIsFav()}
+          className="absolute top-3 right-3 text-neutral-600 md:hidden"
+        >
+          {isFav ? (
+            <span className="text-yellow-500">
+              <HeartFill sizes={30} />
+            </span>
+          ) : (
+            <span>
+              <HeartIcon sizes={30} />
+            </span>
+          )}
         </button>
         <h1 className="text-4xl font-medium font-Bungee flex items-center gap-3">
           {name}{" "}
@@ -32,7 +58,9 @@ function Card({ image, price, description, name, notes }) {
           {`${description}.`}
         </p>
         {/* <p>{product.image}</p> */}
-        <p className="text-2xl font-semibold text-amber-800">{`$${price}`}</p>
+        <p className="text-2xl font-semibold text-amber-800">{`${handleCurrency(
+          price
+        )}`}</p>
         <div className="flex items-center gap-2 flex-wrap capitalize">
           {notes &&
             notes.map((n, i) => (

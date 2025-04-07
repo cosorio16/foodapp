@@ -7,6 +7,16 @@
   --font-Bungee: "Bungee Spice", sans-serif;
 }
 
+* {
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+}
+
+/* Para Webkit (Chrome, Safari, Opera) */
+*::-webkit-scrollbar {
+  display: none; /* Oculta el scrollbar */
+}
+
 button {
   cursor: pointer;
 }

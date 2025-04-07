@@ -9,7 +9,7 @@ function Home() {
     <div>
       <Header />
       <Modal/>
-      <div className="py-5 px-4 xl:px-16 items-center justify-items-center grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 font-Poppins bg-neutral-100">
+      <div className="py-5 px-8 md:px-4 xl:px-16 items-center justify-items-center grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 font-Poppins bg-neutral-100">
         {data.esquites.map((product) => (
           <Card
             key={product.id}
