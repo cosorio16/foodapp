@@ -1,6 +1,5 @@
 import { createPortal } from "react-dom";
 import CloseIcon from "../icons/CloseIcon";
-import useStore from "../store/store";
 
 function Receipt({ state, onClose }) {
   return (
@@ -27,7 +26,7 @@ function Receipt({ state, onClose }) {
               <CloseIcon sizes={25} />
             </button>
             <div className="grow"></div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-2 md:gap-5">
               <button className="rounded w-full py-2.5 font-medium bg-[#1c1c1c] text-white">
                 Pagar
               </button>
