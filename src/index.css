@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
 
 @import "tailwindcss";
 
@@ -19,6 +19,12 @@ body {
 
 button {
   cursor: pointer;
+}
+
+@theme {
+  --font-Poppins: "Poppins";
+  --font-Bungee: "Bungee Spice";
+  --font-Tint: "Bungee Tint";
 }
 
 @font-face {
@@ -81,24 +87,15 @@ button {
 }
 
 @font-face {
-  font-family: "Bungee Spice", sans-serif;
+  font-family: "Bungee Spice";
   src: url("./fonts/Bungee_Spice/BungeeSpice-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Bungee Tint", sans-serif;
+  font-family: "Bungee Tint";
   src: url("./fonts/Bungee_Tint/BungeeTint-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-}
-
-@theme {
-  --font-Poppins: "Poppins", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  --font-Bungee: "Bungee Spice", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  --font-Tint: "Bungee Tint", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
