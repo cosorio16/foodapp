@@ -12,7 +12,7 @@ const useStore = create((set) => ({
 
   removeToCart: (id) =>
     set((state) => ({
-      cart: state.cart.filter((product) => product.id !== id),
+      cart: state.cart.filter((_, index) => index !== id),
     })),
 
   editCart: (id, data) =>
