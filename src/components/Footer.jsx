@@ -4,7 +4,7 @@ import TiktokIcon from "../icons/TiktokIcon";
 
 function Footer() {
   return (
-    <footer className="min-h-32 bg-neutral-700 font-Poppins text-white">
+    <footer className="min-h-32 bg-[#1c1c1c] font-Poppins text-white">
       <div className="p-3 flex flex-col gap-2">
         <div className="flex items-center gap-3 flex-wrap justify-center">
           <img

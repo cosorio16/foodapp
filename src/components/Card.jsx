@@ -35,7 +35,7 @@ function Card({ image, price, description, name, notes }) {
   return (
     <div
       data-aos="fade-up"
-      className="border border-slate-100 rounded  gap-2 items-center shadow-sm w-full h-full md:max-w-96 flex flex-col pb-5 bg-white"
+      className="border-2 border-orange-100 rounded  gap-2 items-center shadow-sm w-full h-full md:max-w-96 flex flex-col pb-5 bg-white max-h-fit md:max-h-full"
     >
       <div className="overflow-hidden w-full relative">
         <img
@@ -78,7 +78,7 @@ function Card({ image, price, description, name, notes }) {
           className="text-4xl font-medium font-Bungee flex items-center gap-3"
         >
           {name}{" "}
-          <span className="text-amber-400">
+          <span className="text-sky-600">
             <VerifiedIcon sizes={35} />
           </span>
         </h1>

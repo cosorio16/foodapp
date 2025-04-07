@@ -12,7 +12,7 @@ import NumberFlow from "@number-flow/react";
 function Modal() {
   const [selected, setSelected] = useState([]);
   const [price, setPrice] = useState(0);
-  const { modal, setModal, product, setProduct } = useStore();
+  const { modal, setModal, product, addToCart, cart } = useStore();
 
   const handleSelectValue = (val) => {
     if (selected.includes(val)) {
@@ -25,21 +25,22 @@ function Modal() {
     }
   };
 
-  const handleCurrency = (p) => {
-    return new Intl.NumberFormat("es-CO", {
-      style: "currency",
-      currency: "COP",
-      minimumFractionDigits: 0,
-    }).format(p);
-  };
-
   const handleClose = () => {
-    setModal(false);
     setSelected([]);
     setPrice(0);
+    setModal(false);
   };
 
-  console.log({ ...product, price });
+  const handleAddToCart = () => {
+    addToCart({
+      esquite: product,
+      extras: selected,
+      total: price,
+    });
+    handleClose();
+  };
+
+  console.log(cart);
 
   useEffect(() => {
     product.price && setPrice(product.price);
@@ -52,11 +53,11 @@ function Modal() {
           onClick={() => setModal(false)}
           className={`fixed inset-0 w-screen h-dvh bg-black/50 pt-10 flex items-center justify-center font-Poppins ${
             modal ? "opacity-100" : "opacity-0 pointer-events-none"
-          } transition-all duration-300`}
+          } transition-all duration-500`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`w-full max-w-160 h-full bg-white relative flex flex-col p-3 gap-5 ${
+            className={`w-full max-w-160 h-full bg-white relative flex flex-col p-3 gap-5 rounded-t ${
               modal ? "translate-y-0" : "translate-y-full"
             } transition-all duration-300`}
           >
@@ -170,7 +171,10 @@ function Modal() {
                 </button> */}
               </div>
 
-              <button className="p-2 rounded-full text-white bg-amber-500">
+              <button
+                onClick={() => handleAddToCart()}
+                className="p-2 rounded-full text-white bg-amber-500"
+              >
                 <ArrowIcon sizes={30} />
               </button>
             </div>
@@ -183,12 +187,3 @@ function Modal() {
 }
 
 export default Modal;
-
-{
-  /* <input
-                  type="checkbox"
-                  name=""
-                  id=""
-                  className="size-6 accent-orange-600 "
-                /> */
-}
