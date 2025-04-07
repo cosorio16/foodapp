@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../data/data";
 // import MinusIcon from "../icons/MinusIcon";
 // import PlusIcon from "../icons/PlusIcon";
@@ -7,11 +7,12 @@ import ArrowIcon from "../icons/ArrowIcon";
 import CloseIcon from "../icons/CloseIcon";
 import CheckIcon from "../icons/CheckIcon";
 import useStore from "../store/store";
+import NumberFlow from "@number-flow/react";
 
 function Modal() {
   const [selected, setSelected] = useState([]);
   const [price, setPrice] = useState(0);
-  const { modal, setModal } = useStore();
+  const { modal, setModal, product, setProduct } = useStore();
 
   const handleSelectValue = (val) => {
     if (selected.includes(val)) {
@@ -38,14 +39,20 @@ function Modal() {
     setPrice(0);
   };
 
-  console.log(selected);
+  console.log(product, price, selected);
+
+  useEffect(() => {
+    product.price && setPrice(product.price);
+  }, [product]);
+
+
 
   return (
     <>
       {createPortal(
         <div
           onClick={() => setModal(false)}
-          className={`fixed inset-0 bg-black/50 pt-10 flex items-center justify-center font-Poppins ${
+          className={`fixed inset-0 w-screen h-dvh bg-black/50 pt-10 flex items-center justify-center font-Poppins ${
             modal ? "opacity-100" : "opacity-0 pointer-events-none"
           } transition-all duration-300`}
         >
@@ -154,7 +161,10 @@ function Modal() {
                 </button> */}
                 <div className="text-lg font-medium text-amber-900">
                   <p className=""> Total</p>
-                  <p className="text-2xl">{handleCurrency(price)}</p>
+
+                  <p className="text-2xl">
+                    <NumberFlow value={price} prefix="$" />
+                  </p>
                 </div>
 
                 {/* <button className="border p-2 rounded border-neutral-300 text-neutral-600">

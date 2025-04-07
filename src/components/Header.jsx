@@ -3,7 +3,19 @@ import HeartIcon from "../icons/HeartIcon";
 import HistoryIcon from "../icons/HistoryIcon";
 import ReceiptIcon from "../icons/ReceiptIcon";
 
-function Header() {
+function Header({ products, setProducts }) {
+  const handleChangeInput = (input) => {
+    if (input !== undefined && input.trim !== "") {
+      let filter = products.filter((p) =>
+        p.name.toLowerCase().includes(input.toLowerCase())
+      );
+      console.log(filter)
+      setProducts(filter);
+    } 
+  };
+
+
+
   return (
     <header className="flex flex-col w-full shadow-xl bg-white px-5 xl:px-16 py-2 gap-3 font-Poppins">
       <div className="flex items-center justify-between">
@@ -32,6 +44,7 @@ function Header() {
           type="text"
           placeholder="Buscar productos"
           className="bg-white py-3 px-5 rounded focus:outline-none w-full placeholder:font-medium placeholder:text-neutral-400"
+          onChange={(e) => handleChangeInput(e.target.value)}
         />
       </div>
     </header>

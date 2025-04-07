@@ -6,7 +6,7 @@ import HeartFill from "../icons/HeartFill";
 import useStore from "../store/store";
 
 function Card({ image, price, description, name, notes }) {
-  const { setModal } = useStore();
+  const { setModal, setProduct } = useStore();
   const [isFav, setIsFav] = useState(false);
 
   const handleCurrency = (p) => {
@@ -19,6 +19,17 @@ function Card({ image, price, description, name, notes }) {
 
   const handleIsFav = () => {
     setIsFav((isFav) => !isFav);
+  };
+
+  const updateProduct = () => {
+    setModal(true);
+    setProduct({
+      price,
+      description,
+      name,
+      notes,
+      image,
+    });
   };
 
   return (
@@ -74,7 +85,7 @@ function Card({ image, price, description, name, notes }) {
         </div>
       </div>
       <button
-        onClick={() => setModal(true)}
+        onClick={() => updateProduct()}
         className="rounded px-16 py-3 mt-3 text-lg lg:text-xl font-medium bg-amber-600 text-white hover:bg-amber-500 hover:gap-7 flex items-center gap-5 transition-all duration-300"
       >
         Armar Pedido
