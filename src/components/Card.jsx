@@ -75,7 +75,7 @@ function Card({ image, price, description, name, notes }) {
         </button>
         <h1
           data-aos="fade-down"
-          className="text-4xl font-medium font-Bungee flex items-center gap-3"
+          className="text-4xl font-medium font-Tint flex items-center gap-3"
         >
           {name}{" "}
           <span className="text-sky-600">
