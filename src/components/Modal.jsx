@@ -15,11 +15,11 @@ function Modal() {
 
   const handleSelectValue = (val) => {
     if (selected.includes(val)) {
-      setPrice((price) => price - val.price);
+      val.price && setPrice((price) => price - val.price);
       let filter = selected.filter((s) => s !== val);
       setSelected(filter);
     } else {
-      setPrice((price) => price + val.price);
+      val.price && setPrice((price) => price + val.price);
       setSelected([...selected, val]);
     }
   };
