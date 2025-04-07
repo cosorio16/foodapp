@@ -12,7 +12,7 @@ function Home() {
     <div>
       <Header products={data.esquites} setProducts={setProducts} />
       <Modal />
-      <div className="py-5 px-8 md:px-4 xl:px-16 items-center justify-items-center grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 font-Poppins bg-neutral-100 min-h-dvh">
+      <div className="py-5 px-3 md:px-4 xl:px-16 items-center justify-items-center grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 font-Poppins bg-neutral-100 min-h-dvh">
         {products.length > 0 ? (
           products.map((product) => (
             <Card

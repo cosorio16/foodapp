@@ -43,16 +43,25 @@ function Card({ image, price, description, name, notes }) {
           alt=""
           className="min-w-full hidden md:inline h-48 xl:h-72 object-cover object-center rounded-t hover:scale-125 transition-all duration-500"
         />
-        <button 
-         data-aos="zoom-out"
-        className="absolute top-3 right-3 text-neutral-600">
-          <HeartIcon sizes={30} />
+        <button
+          data-aos="zoom-out"
+          className="absolute top-3 right-3 text-neutral-600 pointer-events-auto"
+        >
+          {isFav ? (
+            <span className="text-yellow-500">
+              <HeartFill sizes={30} />
+            </span>
+          ) : (
+            <span>
+              <HeartIcon sizes={30} />
+            </span>
+          )}
         </button>
       </div>
       <div className="px-4 flex flex-col gap-2 grow py-5 border-b border-neutral-300 relative">
         <button
           onClick={() => handleIsFav()}
-          className="absolute top-3 right-3 text-neutral-600 md:hidden"
+          className="absolute top-3 right-3 text-neutral-600 md:hidden z-10"
         >
           {isFav ? (
             <span className="text-yellow-500">

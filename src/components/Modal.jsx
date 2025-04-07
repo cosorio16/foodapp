@@ -39,13 +39,11 @@ function Modal() {
     setPrice(0);
   };
 
-  console.log(product, price, selected);
+  console.log({ ...product, price });
 
   useEffect(() => {
     product.price && setPrice(product.price);
   }, [product]);
-
-
 
   return (
     <>
@@ -58,7 +56,7 @@ function Modal() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`w-full max-w-160 max-h-150  h-full bg-white relative flex flex-col p-3 gap-5 ${
+            className={`w-full max-w-160 h-full bg-white relative flex flex-col p-3 gap-5 ${
               modal ? "translate-y-0" : "translate-y-full"
             } transition-all duration-300`}
           >
