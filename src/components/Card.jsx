@@ -48,7 +48,7 @@ function Card({ image, price, description, name, notes }) {
             </span>
           )}
         </button>
-        <h1 className="text-4xl font-medium font-Tint flex items-center gap-3">
+        <h1 className="text-4xl font-medium font-Bungee flex items-center gap-3">
           {name}{" "}
           <span className="text-amber-400">
             <VerifiedIcon sizes={35} />
